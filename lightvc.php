@@ -845,7 +845,7 @@ class Lvc_FrontController {
 			// Catch exceptions and append additional error info if the request object has anything to say.
 			$moreInfo = $request->getAdditionalErrorInfo();
 			if (!empty($moreInfo)) {
-				throw new Lvc_Exception($e->getMessage() . '. ' . $moreInfo);
+				throw new Lvc_Exception($e->getMessage() . '. ' . $moreInfo, $e->getCode());
 			} else {
 				throw $e;
 			}
